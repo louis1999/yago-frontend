@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 
 import axios from "axios"
 
+import api_url from '../../../config';
+
 function Quote(props){
     const [coversAdvice, setCoversAdvice] = useState()
     const [quote, setQuote] = useState()
@@ -41,7 +43,7 @@ function Quote(props){
             }
         };
 
-        axios.post("http://localhost:3001/api/v1/leads", payload)
+        axios.post(api_url+"/leads", payload)
         .then((response) => {
             setEmail("")
             setPhoneNumber("")

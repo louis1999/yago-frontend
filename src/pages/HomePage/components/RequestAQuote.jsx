@@ -1,6 +1,8 @@
 import { useState } from "react"
 import axios from 'axios';
 
+// import api_url from '../../../../config.js';
+import api_url from '../../../config';
 
 
 
@@ -31,7 +33,7 @@ function RequestAQuote(props){
             }
         };
   
-        axios.post("http://localhost:3001/api/v1/quotes", payload)
+        axios.post(api_url+"/quotes", payload)
         .then((response) => {
             console.log(response.data)
             props.QuoteReceived(response.data.quote)
